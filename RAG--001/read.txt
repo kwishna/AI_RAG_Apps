@@ -1,0 +1,32 @@
+Objective and Motivation:
+Use LangChain, Ollama, and ChromaDB to implement a Retrieval Augmented Generation (RAG) system.
+RAG enables information retrieval without  fine-tuning the LLM for your dataset.
+Retrieval Augmented Generation combines external resources with LLMs.
+
+Definitions:
+LLM - Large Language Model
+Langchain - a framework designed for creation of app using LLM
+Vector database - a database that organizes data through high-dimensional vectors
+ChromaDB - vector database
+RAG - Retrieval Augmented Generation
+Ollama - a tool that allows you to run open-source large language models (LLMs) locally on your machine
+
+Model Details
+Model: gemma:7b
+Gemma is a new open model developed by Google and its DeepMind team. It’s inspired by Gemini models at Google.
+
+RAG serves as a technique for enhancing the knowledge of Large Language Models (LLMs) with additional data.
+
+While LLMs possess the capability to reason about diverse topics, their knowledge is restricted to public data up to a specific training point.
+To develop AI applications capable of reasoning about private or post-cutoff date data, it becomes necessary to supplement the model's knowledge with specific information.
+RAG basically does that by giving LLMs access to external data.
+
+A typical RAG application comprises two main components: Indexing and Retrieval and Generation.
+
+Indexing plays a crucial role in facilitating efficient information retrieval.
+Initially, data is extracted from private sources and partitioned to accommodate long text documents while preserving their semantic relations.
+Subsequently, this partitioned data is stored in a vector database, such as ChromaDB or Pinecone. In our case, we utilize ChromaDB for indexing purposes.
+
+Next, in the Retrieval and Generation phase, relevant data segments are retrieved from storage using a Retriever.
+These segments, along with the user query, are then incorporated into the model prompt.
+Our approach employs an open-source local LLM, Gemma 7b, with the assistance of Ollama.
