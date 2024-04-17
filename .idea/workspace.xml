@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="e71a67d3-73bc-4e4b-b99c-c8797fbefaa3" name="Changes" comment="" />
+    <list default="true" id="e71a67d3-73bc-4e4b-b99c-c8797fbefaa3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RAG--001/.ipynb_checkpoints/RAG-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/RAG--001/.ipynb_checkpoints/RAG-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RAG--001/.ipynb_checkpoints/ollama-python-gemma-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/RAG--001/.ipynb_checkpoints/ollama-python-gemma-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RAG--001/RAG.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/RAG--001/RAG.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RAG--001/ollama-python-gemma.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/RAG--001/ollama-python-gemma.ipynb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,11 +20,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2eYc7dLxqQFIww5oryJa6Kp5Tmk" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -22,9 +34,15 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "F:/ABD/GitHub/OpenAIAPIs"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\ABD\GitHub\RAG_AI_Apps\RAG--001" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
