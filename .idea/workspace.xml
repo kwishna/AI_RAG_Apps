@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e71a67d3-73bc-4e4b-b99c-c8797fbefaa3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="e71a67d3-73bc-4e4b-b99c-c8797fbefaa3" name="Changes" comment="self-rag &amp; corrective rag">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CRAG--003/cRAG1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ADVANCE-RAG--003/cRAG1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CRAG--003/cRAG2.png" beforeDir="false" afterPath="$PROJECT_DIR$/ADVANCE-RAG--003/cRAG2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CRAG--003/corrective-rag-llm.py" beforeDir="false" afterPath="$PROJECT_DIR$/ADVANCE-RAG--003/corrective-rag/corrective-rag-llm--01.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CRAG--003/self-rag-llm.py" beforeDir="false" afterPath="$PROJECT_DIR$/ADVANCE-RAG--003/self-rag/self-rag-llm--01.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,21 +49,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/ABD/GitHub/RAG_AI_Apps&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "F:/ABD/GitHub/LangchainLearn",
+    "settings.editor.selected.configurable": "editor.preferences.completion"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\ABD\GitHub\RAG_AI_Apps\ignore\langgraph" />
+      <recent name="F:\ABD\GitHub\RAG_AI_Apps\ignore\langchain-js" />
+      <recent name="F:\ABD\GitHub\RAG_AI_Apps\ignore" />
+      <recent name="F:\ABD\GitHub\RAG_AI_Apps\ignore\langchan-cookbook" />
       <recent name="F:\ABD\GitHub\RAG_AI_Apps" />
-      <recent name="F:\ABD\GitHub\RAG_AI_Apps\RAG--001" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\ABD\GitHub\RAG_AI_Apps\ADVANCE-RAG--003\self-rag" />
+      <recent name="F:\ABD\GitHub\RAG_AI_Apps\ADVANCE-RAG--003\corrective-rag" />
       <recent name="F:\ABD\GitHub\RAG_AI_Apps\CRAG--003" />
     </key>
   </component>
@@ -80,6 +88,30 @@
       <option name="presentableId" value="Default" />
       <updated>1712084786595</updated>
     </task>
+    <task id="LOCAL-00001" summary="self-rag &amp; corrective rag">
+      <option name="closed" value="true" />
+      <created>1714420479353</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1714420479353</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="self-rag &amp; corrective rag" />
+    <option name="LAST_COMMIT_MESSAGE" value="self-rag &amp; corrective rag" />
   </component>
 </project>

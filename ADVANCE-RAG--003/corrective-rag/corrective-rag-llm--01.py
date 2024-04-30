@@ -1,8 +1,4 @@
 from dotenv import load_dotenv
-import os
-import pathlib
-from llama_index.core import Document
-from llama_index.core.llama_pack import download_llama_pack
 
 load_dotenv()  # take environment variables from .env.
 
@@ -12,7 +8,8 @@ Corrective RAG (CRAG)
 CRAG is a method that enhances the accuracy of LLMs by intelligently re-incorporating information from retrieved documents.
 It uses an evaluator to assess the quality of documents obtained for a query and decides whether to use, ignore, or request more data from these documents.
 CRAG extends its information beyond static databases by using web searches, ensuring access to a wider, up-to-date range of information.
-It also employs a unique strategy to break down and rebuild retrieved documents, focusing on getting the most relevant information while eliminating distractions
+It also employs a unique strategy to break down and rebuild retrieved documents, focusing on getting the most relevant information while eliminating distractions.
+CRAG employs a decompose-then-recompose algorithm for retrieved documents, allowing selective focus on key information and filtering out irrelevant details.
 
 Self-RAG
 ----------
@@ -67,21 +64,19 @@ Use the refined documents to generate an answer grounded in the retrieved docume
 # generator = langchain.Generator()
 # answer = generator.generate(refined_documents)
 
-import langchain
 from langchain.llms import OpenAI
-from langchain.vectorstores import ChromaDB
-from langchain.retrievers import TavilySearchAPI
+from langchain.vectorstores import Chroma
+from langchain_community.tools.tavily_search import TavilySearchResults
 
-# Set up the LLM and vector store
 llm = OpenAI(model_name="gpt-3.5-turbo")
-vector_store = ChromaDB(index_name="my_index")
+vector_store = Chroma(persist_directory='./vectorstore', embedding_function=llm.get_embedding)
 
-# Define the CRAG workflow
+tool = TavilySearchResults()
+
+
 def crag_workflow(query):
-    # Retrieve documents from the vector store
     docs = vector_store.retrieve(query, num_docs=5)
 
-    # Evaluate the quality of the retrieved documents
     doc_scores = []
     for doc in docs:
         score = evaluate_document_quality(doc, query)
@@ -92,7 +87,7 @@ def crag_workflow(query):
 
     # If no relevant documents are found, perform web search
     if not filtered_docs:
-        web_search_results = TavilySearchAPI.search(query)
+        web_search_results = tool.invoke({"query": "What happened in the latest burning man floods"})
         filtered_docs.extend(web_search_results)
 
     # Generate an answer based on the filtered documents
@@ -100,11 +95,13 @@ def crag_workflow(query):
 
     return answer
 
+
 # Define the evaluate_document_quality function
 def evaluate_document_quality(doc, query):
     # Implement a lightweight retrieval evaluator to assess the quality of the document
     # Return a confidence score for the document
     pass
+
 
 # Example usage
 query = "What is the capital of France?"

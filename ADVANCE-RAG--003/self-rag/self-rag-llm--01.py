@@ -1,21 +1,23 @@
 import os
 import langchain
 from langchain.llms import OpenAI
+from langchain.vectorstores import Chroma
 from langchain.chains import RAGChain
 from langchain.prompts import SystemMessagePromptTemplate, HumanMessagePromptTemplate
-from langchain.output_parsers import StrOutputParser
+from langchain.output_parsers import StructuredOutputParser
 
 # Set up the LLM (Large Language Model)
 llm = OpenAI(model_name="text-davinci-003")
 
 # Set up the retrieval model (e.g. a vector database)
+# vector_store = Chroma(persist_directory='./vectorstore', embedding_function=llm.get_embedding)
 vector_db = langchain.VectorDB("chroma")
 
 # Define the RAG chain
 rag_chain = RAGChain(
     llm=llm,
     retriever=vector_db,
-    output_parser=StrOutputParser()
+    output_parser=StructuredOutputParser()
 )
 
 # Define the prompt templates
