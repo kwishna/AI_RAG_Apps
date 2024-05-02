@@ -22,6 +22,25 @@ with open("state_of_the_union.txt", "w") as f:
 loader = TextLoader('./state_of_the_union.txt')
 documents = loader.load()
 
+
+# -------------------
+with open("state_of_the_union.txt") as f:
+    state_of_the_union = f.read()
+
+text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
+texts = text_splitter.split_text(state_of_the_union)
+
+weaviate_client = weaviate.connect_to_local()
+
+docsearch = WeaviateVectorStore.from_texts(
+    texts,
+    OpenAIEmbeddings(),
+    client=weaviate_client,
+    metadatas=[{"source": f"{i}-pl"} for i in range(len(texts))],
+)
+
+# -----------
+
 # text_splitter = CharacterTextSplitter(chunk_size=500, chunk_overlap=50)
 # chunks = text_splitter.split_documents(documents)
 #
@@ -38,7 +57,6 @@ documents = loader.load()
 #
 # retriever = vectorstore.as_retriever()
 
-weaviate_client = weaviate.connect_to_local()
 vectorstore = WeaviateVectorStore.from_documents(documents,  OpenAIEmbeddings(), client=weaviate_client)
 
 # ------ similarity search ------
