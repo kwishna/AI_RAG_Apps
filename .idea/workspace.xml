@@ -183,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714674231126</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="weaviate vector db - update v4">
+      <option name="closed" value="true" />
+      <created>1714674375425</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1714674375425</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
