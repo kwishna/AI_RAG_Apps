@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e71a67d3-73bc-4e4b-b99c-c8797fbefaa3" name="Changes" comment="weaviate vector db - update v4">
+    <list default="true" id="e71a67d3-73bc-4e4b-b99c-c8797fbefaa3" name="Changes" comment="weaviate vector db - using cloud service">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RAG--003/weaviate-vector-rag.py" beforeDir="false" afterPath="$PROJECT_DIR$/RAG--003/weaviate-vector-rag.py" afterDir="false" />
     </list>
@@ -52,21 +52,22 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.ollama-python-sample.executor": "Run",
+    "Python.weaviate-vector-rag-evaluation.executor": "Run",
     "Python.weaviate-vector-rag.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "F:/ABD/GitHub/RAG_AI_Apps/ADVANCE-RAG--003/advance-retriever",
+    "last_opened_file_path": "F:/ABD/GitHub/RAG_AI_Apps/RAG--003",
     "settings.editor.selected.configurable": "com.github.continuedev.continueintellijextension.services.ContinueExtensionConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\ABD\GitHub\RAG_AI_Apps\RAG--003" />
       <recent name="F:\ABD\GitHub\RAG_AI_Apps\ADVANCE-RAG--003\advance-retriever" />
       <recent name="F:\ABD\GitHub\RAG_AI_Apps\ignore\langgraph" />
       <recent name="F:\ABD\GitHub\RAG_AI_Apps\ignore\langchain-js" />
       <recent name="F:\ABD\GitHub\RAG_AI_Apps\ignore" />
-      <recent name="F:\ABD\GitHub\RAG_AI_Apps\ignore\langchan-cookbook" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\ABD\GitHub\RAG_AI_Apps" />
@@ -75,7 +76,7 @@
       <recent name="F:\ABD\GitHub\RAG_AI_Apps\CRAG--003" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.weaviate-vector-rag">
+  <component name="RunManager" selected="Python.weaviate-vector-rag-evaluation">
     <configuration name="ollama-python-sample" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="RAG_AI_Apps" />
       <option name="ENV_FILES" value="" />
@@ -90,6 +91,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RAG--001/ollama-python-sample.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="weaviate-vector-rag-evaluation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="RAG_AI_Apps" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RAG--003" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RAG--003/weaviate-vector-rag-evaluation.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -122,6 +145,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.weaviate-vector-rag-evaluation" />
         <item itemvalue="Python.weaviate-vector-rag" />
         <item itemvalue="Python.ollama-python-sample" />
       </list>
@@ -191,7 +215,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714674375425</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="weaviate vector db - using cloud service">
+      <option name="closed" value="true" />
+      <created>1714675977396</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1714675977396</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -209,6 +241,7 @@
     <MESSAGE value="self-rag &amp; corrective rag" />
     <MESSAGE value="weaviate vector db" />
     <MESSAGE value="weaviate vector db - update v4" />
-    <option name="LAST_COMMIT_MESSAGE" value="weaviate vector db - update v4" />
+    <MESSAGE value="weaviate vector db - using cloud service" />
+    <option name="LAST_COMMIT_MESSAGE" value="weaviate vector db - using cloud service" />
   </component>
 </project>
