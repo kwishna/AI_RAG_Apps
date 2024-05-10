@@ -19,6 +19,9 @@ from langchain_community.embeddings.sentence_transformer import (
     SentenceTransformerEmbeddings,
 )
 
+# https://docs.cohere.com/docs/multi-step-tool-use
+# https://docs.cohere.com/docs/cohere-and-langchain
+
 dotenv.load_dotenv()
 
 # Create the Web search Tool
