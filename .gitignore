@@ -2,3 +2,5 @@
 .env
 /ignore/
 /.ipynb_checkpoints/
+/RAG--005/income-tax-slab.pdf
+/RAG--005/vector/

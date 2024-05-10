@@ -1,18 +1,23 @@
 import os
+import uuid
 
 import dotenv
 from langchain_core.pydantic_v1 import BaseModel, Field
 from langchain_community.tools.tavily_search import TavilySearchResults
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_cohere import CohereEmbeddings
+from langchain_openai import OpenAIEmbeddings
 from langchain_community.document_loaders import WebBaseLoader
-from langchain_community.document_loaders import PyMuPDFLoader
+from langchain_community.document_loaders import PyMuPDFLoader, PyPDFLoader, TextLoader
 from langchain_community.vectorstores import Chroma
 from langchain.agents import AgentExecutor
 from langchain_cohere.react_multi_hop.agent import create_cohere_react_agent
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.tools.retriever import create_retriever_tool
 from langchain_cohere.chat_models import ChatCohere
+from langchain_community.embeddings.sentence_transformer import (
+    SentenceTransformerEmbeddings,
+)
 
 dotenv.load_dotenv()
 
@@ -29,24 +34,34 @@ internet_search.args_schema = TavilySearchInput
 # Create RAG Tool
 
 # Set embeddings
-embd = CohereEmbeddings()
+# embd = SentenceTransformerEmbeddings(model_name="all-MiniLM-L6-v2")
+# embd = CohereEmbeddings()
+embd = OpenAIEmbeddings()
 
 # Load Docs to Index
-loader = PyMuPDFLoader('./income-tax-slab.pdf') #PDF Path
+# loader = PyPDFLoader('./income-tax-slab.pdf') #PDF Path
+loader = TextLoader('./income-tax-faq.txt') #txt Path
 data = loader.load()
 
-#print(data[10])
-
 # Split
-text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
-    chunk_size=512, chunk_overlap=0
+
+text_splitter = RecursiveCharacterTextSplitter(
+    chunk_size=500,
+    chunk_overlap=20,
+    length_function=len,
+    is_separator_regex=False
 )
+
+# text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
+#     chunk_size=512, chunk_overlap=0
+# )
 doc_splits = text_splitter.split_documents(data)
 
 # Add to vectorstore
-vectorstore = Chroma.from_documents(persist_directory='./vector',
+vectorstore = Chroma.from_documents(
+    persist_directory='./vector',
     documents=doc_splits,
-    embedding=embd,
+    embedding=embd
 )
 
 vectorstore_retriever = vectorstore.as_retriever()
@@ -98,7 +113,8 @@ print(output['output'])
 # Query related to  Document
 output = agent_executor.invoke(
     {
-        "input": "How much deduction is required for a salary of 13lakh so that Old regime is better tahn New regime Threshold?",
+        "input": "Which deductions are not allowed in the new tax regime?",
+        # "input": "How much deduction is required for a salary of 13 lakh so that Old regime is better than New regime Threshold?",
         "preamble": preamble,
     }
 )
