@@ -1,0 +1,79 @@
+In RAG, we take a list of documents/chunks of documents and encode these textual documents into a numerical representation called vector embeddings,
+where a single vector embedding represents a single chunk of document and stores them in a database called vector store.
+The models required for encoding these chunks into embeddings are called encoding models or bi-encoders.
+These encoders are trained on a large corpus of data, thus making them powerful enough to encode the chunks of documents in a single vector embedding representation.
+
+Different chunking methods:
+- Fixed size chunking
+- Recursive Chunking
+- Document Specific Chunking
+- Semantic Chunking
+- Agentic Chunking
+
+- Fixed Size Chunking:
+  - Explanation: Divides text into chunks of a predetermined size, optionally with overlap to maintain semantic context.
+    It's straightforward, computationally cheap, and doesn’t require NLP libraries.
+  - Pros:
+    - Common and straightforward approach.
+    - Allows control over chunk size and optional overlap.
+    - Maintains semantic context between chunks.
+    - Computationally cheap and simple, no need for NLP libraries.
+  - Cons:
+    - May not adapt well to varying text structures.
+    - Lack of flexibility in handling irregularities in text.
+
+- Recursive Chunking:
+  - Explanation: Divides text iteratively using a set of separators, adjusting chunk size based on text characteristics.
+    It recursively calls itself until desired chunk size or structure is achieved, combining benefits of fixed-size chunks and overlap.
+  - Pros:
+    - Hierarchical and iterative, adjusts chunking based on text characteristics.
+    - Aspires to maintain similar-sized chunks.
+    - Combines benefits of fixed-size chunks and overlap.
+  - Cons:
+    - Complexity increases with recursive iterations.
+    - May require fine-tuning of parameters for optimal results.
+
+- Document Specific Chunking:
+  - Explanation: Divides text based on logical sections of the document like paragraphs or subsections,
+     maintaining author’s organization for coherence and relevance. Particularly useful for structured documents like Markdown or HTML.
+  - Pros:
+    - Considers document structure, aligning with logical sections.
+    - Maintains coherence and relevance of content.
+    - Useful for structured documents like Markdown or HTML.
+  - Cons:
+    - Requires understanding of document structure.
+    - May not be suitable for unstructured or dynamically changing content.
+
+- Semantic Chunking:
+  - Explanation: Divides text into meaningful, semantically complete chunks, considering relationships within the text. Ensures integrity and contextuality of information.
+  - Pros:
+    - Considers semantic relationships for meaningful chunking.
+    - Ensures integrity and contextuality of information.
+  - Cons:
+    - Slower compared to other methods.
+    - Requires deeper linguistic analysis.
+
+- Agentic Chunk:
+  - Explanation: Mimics human processing of documents by starting at the top and iteratively deciding whether new information belongs to the current chunk or starts a new one.
+     Still under development and testing, with high computational cost and no public library implementation available yet.
+  - Pros:
+    - Mimics human processing of documents.
+    - Intuitive approach for understanding content flow.
+  - Cons:
+    - Still under development and testing.
+    - High computational cost and time-consuming due to multiple LLM calls.
+    - No public library implementation available yet.
+
+
+Semantic Chunks:-
+Semantic chunking involves taking the embeddings of every sentence in the document, comparing the similarity of all sentences with each other,
+and then grouping sentences with the most similar embeddings together.
+
+Basic idea is as follows :-
+    - Split the documents into sentences based on separators(.,?,!)
+    - Index each sentence based on position.
+    - Group: Choose how many sentences to be on either side. Add a buffer of sentences on either side of our selected sentence.
+    - Calculate distance between group of sentences.
+    - Merge groups based on similarity i.e. keep similar sentences together.
+    - Split the sentences that are not similar.
+
